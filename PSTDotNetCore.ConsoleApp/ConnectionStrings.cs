@@ -12,7 +12,7 @@ namespace PSTDotNetCore.ConsoleApp
         public static SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
             DataSource = ".",
-            InitialCatalog = "DotNetTrainingBatch4",
+            InitialCatalog = "PSTDotNetCore",
             UserID = "sa",
             Password = "sa@123"
 

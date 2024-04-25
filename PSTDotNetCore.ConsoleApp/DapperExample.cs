@@ -19,7 +19,7 @@ namespace PSTDotNetCore.ConsoleApp
             //Edit(11);
             //Create("title", "author", "content");
             //Update(2001,"title1", "author1", "content1");
-            Delete(2002);
+            Delete(2003);
         }
         private void Read()
         {
