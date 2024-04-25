@@ -15,3 +15,4 @@ PSTDotNetCore
 2024-04-10 Ado.net CRUD
 2024-04-22 Dapper CRUD
 2024-04-23 EF Core CRUD
+2024-04-24 ASP.net Core web API
