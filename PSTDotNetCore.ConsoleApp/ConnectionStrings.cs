@@ -14,7 +14,8 @@ namespace PSTDotNetCore.ConsoleApp
             DataSource = ".",
             InitialCatalog = "PSTDotNetCore",
             UserID = "sa",
-            Password = "sa@123"
+            Password = "sa@123",
+            TrustServerCertificate = true
 
         };
     }

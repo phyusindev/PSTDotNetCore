@@ -11,8 +11,11 @@ using System.Data.SqlClient;
 //adoDotNetExample.Delete(1001);
 //adoDotNetExample.Edit(1001);
 
-DapperExample dapperExample = new DapperExample();  
-dapperExample.Run();
+//DapperExample dapperExample = new DapperExample();  
+//dapperExample.Run();
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+eFCoreExample.Run();
 
 Console.ReadLine();
 
