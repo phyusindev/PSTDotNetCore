@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTDotNetCore.ConsoleApp
+namespace PSTDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -19,7 +19,7 @@ namespace PSTDotNetCore.ConsoleApp
         };
         public void Read()
         {
-            
+
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
             connection.Open();
@@ -49,7 +49,7 @@ namespace PSTDotNetCore.ConsoleApp
             }
 
         }
-        public void Create(string title,string author,string content)
+        public void Create(string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -74,7 +74,7 @@ namespace PSTDotNetCore.ConsoleApp
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
         }
-        public void Update(int blogid,string title,string author,string content)
+        public void Update(int blogid, string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -136,7 +136,7 @@ namespace PSTDotNetCore.ConsoleApp
             //dataset => multi datatables
             //datatable => datarow
             //datarow => datacolumn
-            if(dt.Rows.Count == 0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No Record Found!");
                 return;
@@ -149,7 +149,7 @@ namespace PSTDotNetCore.ConsoleApp
             Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
             Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
             Console.WriteLine("------------------------------");
-           
+
 
         }
     }

@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.RestApi", "PSTDotNetCore.RestApi\PSTDotNetCore.RestApi.csproj", "{EC34B645-7380-4FCF-AEA6-FB3806B1AAAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5EEF2798-F212-4109-B616-B45319F83538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EEF2798-F212-4109-B616-B45319F83538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EEF2798-F212-4109-B616-B45319F83538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC34B645-7380-4FCF-AEA6-FB3806B1AAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC34B645-7380-4FCF-AEA6-FB3806B1AAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC34B645-7380-4FCF-AEA6-FB3806B1AAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC34B645-7380-4FCF-AEA6-FB3806B1AAAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿using PSTDotNetCore.ConsoleApp;
+﻿using PSTDotNetCore.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 

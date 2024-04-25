@@ -4,26 +4,27 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using PSTDotNetCore.ConsoleApp.Dtos;
 
-namespace PSTDotNetCore.ConsoleApp
+namespace PSTDotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
         private readonly AddDbContext db = new AddDbContext();
         public void Run()
         {
-            //Read();
+            Read();
             //Edit(1);
             //Edit(11);
             //Create("Title", "Author", "Content");
             //Update(2004, "Title2", "Author2", "Content2");
-            Delete(2004);
+            //Delete(2004);
         }
         public void Read()
         {
-            
+
             var lst = db.Blogs.ToList();
-            foreach(BlogDto item in lst)
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogTitle);
@@ -35,7 +36,7 @@ namespace PSTDotNetCore.ConsoleApp
         public void Edit(int id)
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;
@@ -62,10 +63,10 @@ namespace PSTDotNetCore.ConsoleApp
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
         }
-        public void Update(int id,string title,string author,string content)
+        public void Update(int id, string title, string author, string content)
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;
@@ -81,7 +82,7 @@ namespace PSTDotNetCore.ConsoleApp
         public void Delete(int id)
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;

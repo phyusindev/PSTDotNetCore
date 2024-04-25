@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using PSTDotNetCore.ConsoleApp.Dtos;
+using PSTDotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +10,11 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTDotNetCore.ConsoleApp
+namespace PSTDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
-        public void Run() 
+        public void Run()
         {
             //Read();
             //Edit(1);
@@ -26,7 +28,7 @@ namespace PSTDotNetCore.ConsoleApp
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             List<BlogDto> lst = db.Query<BlogDto>("Select * from Tbl_Blog").ToList();
 
-            foreach (BlogDto item in lst) 
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogTitle);
@@ -40,7 +42,7 @@ namespace PSTDotNetCore.ConsoleApp
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             var item = db.Query<BlogDto>("Select * from Tbl_Blog where Blogid = @BlogId", new BlogDto { BlogId = blogid }).FirstOrDefault();
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("Data not found.");
                 return;
@@ -53,7 +55,7 @@ namespace PSTDotNetCore.ConsoleApp
             Console.WriteLine("--------------------------------");
         }
 
-        public void Create(string title,string author,string content)
+        public void Create(string title, string author, string content)
         {
             var item = new BlogDto
             {
@@ -70,14 +72,14 @@ namespace PSTDotNetCore.ConsoleApp
            ,@BlogAuthor
            ,@BlogContent)";
 
-            using IDbConnection db= new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             int result = db.Execute(query, item);
 
             string message = result > 0 ? "Saving Sucessful." : "Saving Failed.";
             Console.WriteLine(message);
         }
 
-        public void Update(int blogid,string title,string author,string content)
+        public void Update(int blogid, string title, string author, string content)
         {
             var item = new BlogDto
             {
