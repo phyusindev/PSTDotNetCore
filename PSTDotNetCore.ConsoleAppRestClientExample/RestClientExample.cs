@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,32 +7,36 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace PSTDotNetCore.ConsoleAppHttpClientExample
+namespace PSTDotNetCore.ConsoleAppRestClientExample
 {
-    internal class HttpClientExample
+    internal class RestClientExample
     {
-        private readonly HttpClient _client = new HttpClient() { BaseAddress = new Uri("https://localhost:7194") };
+        private readonly RestClient _client = new RestClient(new Uri("https://localhost:7194")); 
         private readonly string _blogEndpoint = "api/blog";
         public async Task RunAsync()
         {
             //await ReadAsync();
             //await EditAsync(1);
             //await EditAsync(200);
-            //await CreateAsync("title", "author 2", "content 2");
-            //await EditAsync(2015);
-            //await UpdateAsync(2015,"title2015", "author 2015", "content 2015");
-            //await PatchAsync(2016,"title2016","","");
+            //await CreateAsync("titlerest", "authorrest", "contentrest");            
+            //await UpdateAsync(2016,"title2016", "author 2016", "content 2016");
+            //await EditAsync(2016);
+            //await PatchAsync(2018,"title2018","","");
             //await PatchAsync(2017, "null", "author 2017", null);
             //await EditAsync(2017);
-            await DeleteAsync(2015);
+            await DeleteAsync(2017);
         }
 
         private async Task ReadAsync()
         {
-            var response = await _client.GetAsync(_blogEndpoint);
+            //RestRequest restRequest = new RestRequest(_blogEndpoint);
+            //var response = await _client.GetAsync(restRequest);
+
+            RestRequest restRequest = new RestRequest(_blogEndpoint, Method.Get);
+            var response = await _client.ExecuteAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
-                string jsonStr = await response.Content.ReadAsStringAsync();
+                string jsonStr = response.Content!;
                 List<BlogDto> lst = JsonConvert.DeserializeObject<List<BlogDto>>(jsonStr)!;
                 foreach (var blog in lst)
                 {
@@ -45,10 +50,11 @@ namespace PSTDotNetCore.ConsoleAppHttpClientExample
         
         private async Task EditAsync(int id)
         {
-            var response = await _client.GetAsync($"{_blogEndpoint}/{id}");
+            RestRequest restRequest = new RestRequest($"{_blogEndpoint}/{id}", Method.Get);
+            var response = await _client.ExecuteAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
-                string jsonStr = await response.Content.ReadAsStringAsync();
+                string jsonStr = response.Content!;
                 var item = JsonConvert.DeserializeObject<BlogDto>(jsonStr)!;
                 Console.WriteLine(JsonConvert.SerializeObject(item));
                 Console.WriteLine($"Title => {item.BlogTitle}");
@@ -57,7 +63,7 @@ namespace PSTDotNetCore.ConsoleAppHttpClientExample
             }
             else
             {
-                string message = await response.Content.ReadAsStringAsync();
+                string message = response.Content!;
                 Console.WriteLine(message);
             }
         }
@@ -71,14 +77,12 @@ namespace PSTDotNetCore.ConsoleAppHttpClientExample
                 BlogContent = content
             };//c# to object
 
-            //To JSON
-            string blogJson = JsonConvert.SerializeObject(blogDto);
-
-            HttpContent httpContent = new StringContent(blogJson, Encoding.UTF8, Application.Json);
-            var response = await _client.PostAsync(_blogEndpoint,httpContent);
+            var restRequest = new RestRequest(_blogEndpoint,Method.Post);
+            restRequest.AddJsonBody(blogDto);
+            var response = await _client.ExecuteAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
-                string message = await response.Content.ReadAsStringAsync();
+                string message = response.Content!;
                 Console.WriteLine(message);
             }
         }
@@ -92,14 +96,13 @@ namespace PSTDotNetCore.ConsoleAppHttpClientExample
                 BlogContent = content
             };//c# to object
 
-            //To JSON
-            string blogJson = JsonConvert.SerializeObject(blogDto);
 
-            HttpContent httpContent = new StringContent(blogJson, Encoding.UTF8, Application.Json);
-            var response = await _client.PutAsync($"{_blogEndpoint}/{id}", httpContent);
+            var restRequest = new RestRequest($"{_blogEndpoint}/{ id }", Method.Put);
+            restRequest.AddJsonBody(blogDto);
+            var response = await _client.ExecuteAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
-                string message = await response.Content.ReadAsStringAsync();
+                string message = response.Content!;
                 Console.WriteLine(message);
             }
         }
@@ -113,29 +116,29 @@ namespace PSTDotNetCore.ConsoleAppHttpClientExample
                 BlogContent = content
             };//c# to object
 
-            //To JSON
-            string blogJson = JsonConvert.SerializeObject(blogDto);
 
-            HttpContent httpContent = new StringContent(blogJson, Encoding.UTF8, Application.Json);
-            var response = await _client.PatchAsync($"{_blogEndpoint}/{id}", httpContent);
+            var restRequest = new RestRequest($"{_blogEndpoint}/{id}", Method.Patch);
+            restRequest.AddJsonBody(blogDto);
+            var response = await _client.ExecuteAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
-                string message = await response.Content.ReadAsStringAsync();
+                string message = response.Content!;
                 Console.WriteLine(message);
             }
         }
         
         private async Task DeleteAsync(int id)
         {
-            var response = await _client.DeleteAsync($"{_blogEndpoint}/{id}");
+            RestRequest restRequest = new RestRequest($"{_blogEndpoint}/{id}", Method.Delete);
+            var response = await _client.DeleteAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
-                string message = await response.Content.ReadAsStringAsync();
+                string message = response.Content!;
                 Console.WriteLine(message);
             }
             else
             {
-                string message = await response.Content.ReadAsStringAsync();
+                string message = response.Content!;
                 Console.WriteLine(message);
             }
         }
