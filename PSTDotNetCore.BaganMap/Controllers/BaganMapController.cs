@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 
-namespace PSTDotNetCore.RestApiWithNLayer.Features.BaganMap
+namespace PSTDotNetCore.BaganMap.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,7 +16,7 @@ namespace PSTDotNetCore.RestApiWithNLayer.Features.BaganMap
             return model;
         }
 
-        [HttpGet]
+        [HttpGet("travelroutelist")]
         public async Task<IActionResult> TravelRoutes()
         {
             var model = await GetDataAsync();
@@ -28,29 +28,29 @@ namespace PSTDotNetCore.RestApiWithNLayer.Features.BaganMap
                 })); ;
         }
 
-        [HttpGet("travelroutes/{travelroutename}")]
+        [HttpGet("baganmapinfodata/{travelRouteName}")]
         public async Task<IActionResult> TravelRoutes(string travelroutename)
         {
             var model = await GetDataAsync();
             var item = from route in model.Tbl_TravelRouteListData
-                         from pagodaId in route.PagodaList
-                         join pagoda in model.Tbl_BaganMapInfoData
-                         on pagodaId equals pagoda.Id
-                         where route.TravelRouteName == travelroutename
-                         select new
-                         {
-                             //route.TravelRouteName,
-                             pagoda.Id,
-                             pagoda.PagodaMmName,
-                             pagoda.PagodaEngName,
-                             pagoda.Latitude,
-                             pagoda.Longitude
-                         };
+                       from pagodaId in route.PagodaList
+                       join pagoda in model.Tbl_BaganMapInfoData
+                       on pagodaId equals pagoda.Id
+                       where route.TravelRouteName == travelroutename
+                       select new
+                       {
+                           //route.TravelRouteName,
+                           pagoda.Id,
+                           pagoda.PagodaMmName,
+                           pagoda.PagodaEngName,
+                           pagoda.Latitude,
+                           pagoda.Longitude
+                       };
 
             return Ok(item);
         }
 
-        [HttpGet("baganinfo/{pagodaid}")]
+        [HttpGet("baganmapinfodetaildata/{pagodaId}")]
         public async Task<IActionResult> BaganmapInfoDetails(string pagodaid)
         {
             var model = await GetDataAsync();
