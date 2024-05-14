@@ -83,7 +83,7 @@ namespace PSTDotNetCore.PizzaApi.Features.Pizza
                 TotalAmount = total
             };
 
-            return Ok(orderRequest);
+            return Ok(response);
         }
     }
 }
