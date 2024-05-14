@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+/PSTDotNetCore.RestApiwithNLayer/Features/MyanmarProverbs
+/PSTDotNetCore.RestApiwithNLayer/JsonData/MyanmarProverbs.json
