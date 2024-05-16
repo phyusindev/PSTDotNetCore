@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.BaganMap", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.PizzaApi", "PSTDotNetCore.PizzaApi\PSTDotNetCore.PizzaApi.csproj", "{E098B2EF-C119-43D6-8BC9-3E0E77CF190F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.ConsoleAppRefitExamples", "PSTDotNetCore.ConsoleAppRefitExamples\PSTDotNetCore.ConsoleAppRefitExamples.csproj", "{C450C274-AF74-47EC-9B1B-BC1916C2C4BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.ConsoleAppRefitExamples", "PSTDotNetCore.ConsoleAppRefitExamples\PSTDotNetCore.ConsoleAppRefitExamples.csproj", "{C450C274-AF74-47EC-9B1B-BC1916C2C4BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.WinFormsApp", "PSTDotNetCore.WinFormsApp\PSTDotNetCore.WinFormsApp.csproj", "{35951058-DDA1-42B8-9378-6AD936B1DD16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{C450C274-AF74-47EC-9B1B-BC1916C2C4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C450C274-AF74-47EC-9B1B-BC1916C2C4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C450C274-AF74-47EC-9B1B-BC1916C2C4BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35951058-DDA1-42B8-9378-6AD936B1DD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35951058-DDA1-42B8-9378-6AD936B1DD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35951058-DDA1-42B8-9378-6AD936B1DD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35951058-DDA1-42B8-9378-6AD936B1DD16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
