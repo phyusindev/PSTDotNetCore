@@ -36,6 +36,7 @@
             txtAuthor = new TextBox();
             txtTitle = new TextBox();
             txtContent = new TextBox();
+            btnUpdate = new Button();
             SuspendLayout();
             // 
             // btnSave
@@ -113,11 +114,26 @@
             txtContent.Size = new Size(332, 67);
             txtContent.TabIndex = 7;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.DodgerBlue;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(187, 272);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(75, 34);
+            btnUpdate.TabIndex = 8;
+            btnUpdate.Text = "&Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Visible = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
             // FrmBlog
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(637, 398);
+            Controls.Add(btnUpdate);
             Controls.Add(txtContent);
             Controls.Add(txtTitle);
             Controls.Add(txtAuthor);
@@ -144,5 +160,6 @@
         private TextBox txtAuthor;
         private TextBox txtTitle;
         private TextBox txtContent;
+        private Button btnUpdate;
     }
 }

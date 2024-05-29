@@ -52,6 +52,7 @@
             dgvBlogs.RowTemplate.Height = 25;
             dgvBlogs.Size = new Size(484, 361);
             dgvBlogs.TabIndex = 0;
+            dgvBlogs.CellContentClick += dgvBlogs_CellContentClick;
             // 
             // ColId
             // 
