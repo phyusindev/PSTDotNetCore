@@ -117,8 +117,8 @@
 
         private DataGridView dgvBlogs;
         private DataGridViewTextBoxColumn ColId;
-        private DataGridViewButtonColumn ColEdit;
         private DataGridViewButtonColumn ColDelete;
+        private DataGridViewButtonColumn ColEdit;
         private DataGridViewTextBoxColumn ColTitle;
         private DataGridViewTextBoxColumn ColAuthor;
         private DataGridViewTextBoxColumn ColContent;

@@ -8,7 +8,7 @@ namespace PSTDotNetCore.WinFormsApp.Queries
 {
     internal enum EnumFormControlType
     {
-        //None = 0,
+        None = -1,
         Edit = 0,
         Delete = 1,
     }

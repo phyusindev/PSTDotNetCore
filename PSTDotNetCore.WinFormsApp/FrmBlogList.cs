@@ -39,6 +39,8 @@ namespace PSTDotNetCore.WinFormsApp
         {
             if (e.RowIndex == -1) return;
 
+            #region if case
+
             var blogId = Convert.ToInt32(dgvBlogs.Rows[e.RowIndex].Cells["colId"].Value);
 
             if (e.ColumnIndex == (int)EnumFormControlType.Edit)
@@ -56,6 +58,34 @@ namespace PSTDotNetCore.WinFormsApp
                 DeleteBlog(blogId);
                 
             }
+            #endregion
+
+            //#region switch case
+
+            //int index = e.ColumnIndex;
+            //if (index == -1) return;
+
+            //EnumFormControlType enumFormControlType = (EnumFormControlType)index;
+            //switch (enumFormControlType)
+            //{
+            //    case EnumFormControlType.Edit:
+            //        FrmBlog frm = new FrmBlog(blogId);
+            //        frm.ShowDialog();
+
+            //        BlogList();
+            //        break;
+            //    case EnumFormControlType.Delete:
+            //        var dialogResult = MessageBox.Show("Are you sure want to delete?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //        if (dialogResult != DialogResult.Yes) return;
+
+            //        DeleteBlog(blogId);
+            //        break;
+            //    case EnumFormControlType.None:
+            //    default:
+            //        MessageBox.Show("Invalid case");
+            //        break;
+            //}
+            //#endregion 
         }
 
         private void DeleteBlog(int id)
