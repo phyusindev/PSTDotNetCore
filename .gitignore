@@ -364,3 +364,5 @@ FodyWeavers.xsd
 
 /PSTDotNetCore.RestApiwithNLayer/Features/MyanmarProverbs
 /PSTDotNetCore.RestApiwithNLayer/JsonData/MyanmarProverbs.json
+/PSTDotNetCore.BusinessLogic/PSTDotNetCore.NLayer.BusinessLogic.csproj
+/PSTDotNetCore.DataAccess/PSTDotNetCore.NLayer.DataAccess.csproj
