@@ -31,13 +31,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.ConsoleAppRef
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.WinFormsApp", "PSTDotNetCore.WinFormsApp\PSTDotNetCore.WinFormsApp.csproj", "{35951058-DDA1-42B8-9378-6AD936B1DD16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.WinFormsAppSqlInjection", "PSTDotNetCore.WinFormsAppSqlInjection\PSTDotNetCore.WinFormsAppSqlInjection.csproj", "{00572D30-68E6-4B2C-9989-C45D59449FC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.WinFormsAppSqlInjection", "PSTDotNetCore.WinFormsAppSqlInjection\PSTDotNetCore.WinFormsAppSqlInjection.csproj", "{00572D30-68E6-4B2C-9989-C45D59449FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.NLayer.UI", "PSTDotNetCore.NLayer.UI\PSTDotNetCore.NLayer.UI.csproj", "{2E27532F-D12B-40BF-9A5B-BAF923003716}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.NLayer.UI", "PSTDotNetCore.NLayer.UI\PSTDotNetCore.NLayer.UI.csproj", "{2E27532F-D12B-40BF-9A5B-BAF923003716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.NLayer.BusinessLogic", "PSTDotNetCore.BusinessLogic\PSTDotNetCore.NLayer.BusinessLogic.csproj", "{76F0F3D3-897C-4884-A9EB-C045DC85448D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.NLayer.BusinessLogic", "PSTDotNetCore.NLayer.BusinessLogic\PSTDotNetCore.NLayer.BusinessLogic.csproj", "{8D29FD3D-33AA-4842-BD22-41C7BD152AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.NLayer.DataAccess", "PSTDotNetCore.DataAccess\PSTDotNetCore.NLayer.DataAccess.csproj", "{DF8F6151-F51B-4BBF-A96B-382C8FFCD1C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.NLayer.DataAccess", "PSTDotNetCore.NLayer.DataAccess\PSTDotNetCore.NLayer.DataAccess.csproj", "{BA0F7061-3A4C-4F5A-97D9-6DD9B9C302C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PSTDotNetCore.Html", "PSTDotNetCore.Html", "{231DAF4A-1260-4442-B93B-B620B5E68CCB}"
+	ProjectSection(SolutionItems) = preProject
+		C:\xampp\htdocs\html\blog.js = C:\xampp\htdocs\html\blog.js
+		C:\xampp\htdocs\html\index.html = C:\xampp\htdocs\html\index.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,14 +103,14 @@ Global
 		{2E27532F-D12B-40BF-9A5B-BAF923003716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E27532F-D12B-40BF-9A5B-BAF923003716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E27532F-D12B-40BF-9A5B-BAF923003716}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76F0F3D3-897C-4884-A9EB-C045DC85448D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76F0F3D3-897C-4884-A9EB-C045DC85448D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76F0F3D3-897C-4884-A9EB-C045DC85448D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76F0F3D3-897C-4884-A9EB-C045DC85448D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF8F6151-F51B-4BBF-A96B-382C8FFCD1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF8F6151-F51B-4BBF-A96B-382C8FFCD1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF8F6151-F51B-4BBF-A96B-382C8FFCD1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF8F6151-F51B-4BBF-A96B-382C8FFCD1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D29FD3D-33AA-4842-BD22-41C7BD152AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D29FD3D-33AA-4842-BD22-41C7BD152AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D29FD3D-33AA-4842-BD22-41C7BD152AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D29FD3D-33AA-4842-BD22-41C7BD152AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0F7061-3A4C-4F5A-97D9-6DD9B9C302C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0F7061-3A4C-4F5A-97D9-6DD9B9C302C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0F7061-3A4C-4F5A-97D9-6DD9B9C302C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0F7061-3A4C-4F5A-97D9-6DD9B9C302C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,4 @@
-﻿
-using PSTDotNetCore.NLayer.DataAccess.Models;
+﻿using PSTDotNetCore.NLayer.DataAccess.Models;
 using PSTDotNetCore.NLayer.DataAccess.Services;
 
 namespace PSTDotNetCore.NLayer.BusinessLogic.Services

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PSTDotNetCore.BusinessLogic\PSTDotNetCore.NLayer.BusinessLogic.csproj" />
+    <ProjectReference Include="..\PSTDotNetCore.NLayer.BusinessLogic\PSTDotNetCore.NLayer.BusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>
