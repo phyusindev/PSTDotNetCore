@@ -39,10 +39,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.NLayer.Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.NLayer.DataAccess", "PSTDotNetCore.NLayer.DataAccess\PSTDotNetCore.NLayer.DataAccess.csproj", "{BA0F7061-3A4C-4F5A-97D9-6DD9B9C302C4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PSTDotNetCore.Html", "PSTDotNetCore.Html", "{231DAF4A-1260-4442-B93B-B620B5E68CCB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PstDotnethtml", "PstDotnethtml", "{C56C7D27-078C-42EA-817C-7F817065D642}"
 	ProjectSection(SolutionItems) = preProject
-		C:\xampp\htdocs\html\blog.js = C:\xampp\htdocs\html\blog.js
-		C:\xampp\htdocs\html\index.html = C:\xampp\htdocs\html\index.html
+		PSTDotNetCore.Html\blog.js = PSTDotNetCore.Html\blog.js
+		PSTDotNetCore.Html\index.html = PSTDotNetCore.Html\index.html
+		PSTDotNetCore.Html\notiflix.html = PSTDotNetCore.Html\notiflix.html
+		PSTDotNetCore.Html\sweetalert.html = PSTDotNetCore.Html\sweetalert.html
 	EndProjectSection
 EndProject
 Global
