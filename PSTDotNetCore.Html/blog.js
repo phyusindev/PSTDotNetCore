@@ -2,6 +2,8 @@ const tblBlog = "blogs";
 let blogId = null;
 
 getBlogTable();
+//testConfirmMessage();
+//testConfirmMessage2();
 //createBlog();
 //updateBlog("608bd5fb-f289-4e4e-995f-191d146375c3", "title-1", "author-1", "content-1");
 //deleteBlog("608bd5fb-f289-4e4e-995f-191d146375c3");
@@ -87,12 +89,8 @@ function updateBlog(id, title, author, content) {
 }
 
 function deleteBlog(id) {
-    Notiflix.Confirm.show(
-        'Confirm',
-        'Are you sure want to delete?',
-        'Yes',
-        'No',
-        function okCb() {
+    confirmMessage("Are you sure want to delete?").then(
+        function (value) {
             let lst = getBlogs();
 
             const items = lst.filter(x => x.id === id);
@@ -107,19 +105,43 @@ function deleteBlog(id) {
 
             successMessage("Deleting Succssfull.");
             getBlogTable();
-        },
-        function cancelCb() {
-            return;
-        }, {},
+        }
     );
-    // let result = confirm("Are you sure want to delete?");
-    // if (!result) return;
 }
 
-function uuidv4() {
-    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-        (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
-    );
+function confirmMessage(message) {
+    // let confirmMessageResult = new Promise(function (success, error) {
+    //     Swal.fire({
+    //         title: "Confirm",
+    //         text: message,
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonText: "Yes"
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             success();
+    //         } else {
+    //             error();
+    //         }
+    //     });
+    // });
+    // return confirmMessageResult;
+
+    let confirmMessageResult = new Promise(function (success, error) {
+        Notiflix.Confirm.show(
+            'Confirm',
+            message,
+            'Yes',
+            'No',
+            function okCb() {
+                success();
+            },
+            function cancelCb() {
+                error();
+            }
+        );
+    });
+    return confirmMessageResult;
 }
 
 function getBlogs() {
@@ -153,30 +175,6 @@ $('#btnCancel').click(function () {
 
     clearControl();
 });
-
-function successMessage(message) {
-    Swal.fire({
-        title: "Sucess!",
-        text: message,
-        icon: "success"
-    });
-}
-
-function errorMessage(message) {
-    Swal.fire({
-        title: "Error!",
-        text: message,
-        icon: "error"
-    });
-}
-
-function warningMessage(message) {
-    Swal.fire({
-        title: "Warning!",
-        text: message,
-        icon: "warning"
-    });
-}
 
 function clearControl() {
     $('#txtTitle').val('');
