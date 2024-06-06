@@ -1,3 +1,17 @@
+const tblProduct = "products";
+let productId = null;
+
+function getProducts() {
+    const products = localStorage.getItem(tblProduct);
+    console.log(products);
+
+    let lst = [];
+    if (products !== null) {
+        lst = JSON.parse(products);
+    }
+    return lst;
+}
+
 function uuidv4() {
     return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
         (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
