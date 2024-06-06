@@ -1,37 +1,3 @@
-// function getProductCard() {
-//     const lst = getProducts();
-//     let htmlCards = '';
-//     lst.forEach(item => {
-//         const htmlCard = `
-//         <div class="col-md-4 mb-4">
-//         <div class="card" style="width: 18rem;">
-//         <img class="card-img-top" src="${item.image}" alt="product image">
-//         <div class="card-body">
-//             <h5 class="card-title">${item.name}</h5>
-//             <p class="card-text">MMK ${item.price}</p>
-//             <a href="#" class="btn btn-secondary add-to-cart">
-//     <i class="bi bi-cart-plus"></i> Add to Cart
-// </a>
-//         </div>
-//         </div>
-//         </div>
-//         `;
-//         htmlCards += htmlCard;
-//     });
-
-//     $('#productContainer').html(htmlCards);
-// }
-
-// $(document).ready(function () {
-//     let cartCount = 0;
-//     getProductCard();
-//     $('#productContainer').on('click', '.add-to-cart', function (event) {
-//         event.preventDefault();
-//         cartCount++;
-//         $('#cartBadge').text(cartCount);
-//     });
-// });
-
 function getProductCard() {
     const lst = getProducts();
     let htmlCards = '';
