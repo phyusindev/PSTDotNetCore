@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 
 namespace PSTDotNetCore.ConsoleApp.EFCoreExamples
 {
-    internal class AddDbContext : DbContext
+    internal class AppDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AppDbContext(DbContextOptions options) : base(options)
         {
-            optionsBuilder.UseSqlServer(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
+        //}
         public DbSet<BlogDto> Blogs { get; set; }
     }
 }

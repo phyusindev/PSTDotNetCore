@@ -92,7 +92,7 @@ $(document).ready(function () {
     });
 
     $('#updateCart').on('click', function () {
-        cart = cart.filter(product => product.qty > 0);
+        cart = cart.filter(product => product.qty > 0); //this line is not working :(
 
         updateCartBadge();
         $('#cartModal').modal('hide');

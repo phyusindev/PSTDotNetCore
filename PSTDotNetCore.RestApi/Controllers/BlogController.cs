@@ -15,10 +15,16 @@ namespace PSTDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
+        //private readonly AddDbContext _context;
+        //public BlogController()
+        //{
+        //    _context = new AddDbContext();
+        //}
         private readonly AddDbContext _context;
-        public BlogController()
+
+        public BlogController(AddDbContext context)
         {
-            _context = new AddDbContext();
+            _context = context;
         }
 
         [HttpGet]
