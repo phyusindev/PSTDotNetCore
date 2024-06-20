@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PSTDotNetCore.MvcApp.Db;
+using PSTDotNetCore.MvcApp.Models;
 
 namespace PSTDotNetCore.MvcApp.Controllers
 {
@@ -17,6 +18,23 @@ namespace PSTDotNetCore.MvcApp.Controllers
         {
             var lst = await _db.Blogs.ToListAsync();
             return View(lst);
+        }
+
+        [ActionName("Create")]
+        public async Task<IActionResult> BlogCreate()
+        {
+            return View("BlogCreate");
+        }
+
+        [HttpPost]
+        [ActionName("Save")]
+        public async Task<IActionResult> BlogCreate(BlogModel blog)
+        {
+            await _db.Blogs.AddAsync(blog);
+            var result = await _db.SaveChangesAsync();
+            //return View("BlogCreate");
+            //return Redirect("/Blog");
+            return RedirectToAction("Index");
         }
     }
 }
