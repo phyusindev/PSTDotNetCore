@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSTDotNetCore.NLayer.DataAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.MinimalApi", "PSTDotNetCore.MinimalApi\PSTDotNetCore.MinimalApi.csproj", "{B9D4EADB-93A4-4726-85FD-9169CCE41D38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTDotNetCore.MvcApp", "PSTDotNetCore.MvcApp\PSTDotNetCore.MvcApp.csproj", "{B8220954-F612-4166-98B4-608B0F3806AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{B9D4EADB-93A4-4726-85FD-9169CCE41D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9D4EADB-93A4-4726-85FD-9169CCE41D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9D4EADB-93A4-4726-85FD-9169CCE41D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8220954-F612-4166-98B4-608B0F3806AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8220954-F612-4166-98B4-608B0F3806AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8220954-F612-4166-98B4-608B0F3806AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8220954-F612-4166-98B4-608B0F3806AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
